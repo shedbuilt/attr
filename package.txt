@@ -3,5 +3,5 @@ VERSION=2.4.47
 REVISION=1
 SRC=http://download.savannah.gnu.org/releases/attr/attr-2.4.47.src.tar.gz
 SRCMD5=84f58dec00b60f2dc8fd1c9709291cc7
-OPTIONS=bootstrap|release
-DEFAULTS=release
+OPTIONS=bootstrap|release (docs)
+DEFAULTS=release docs
