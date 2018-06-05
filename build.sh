@@ -1,11 +1,12 @@
 #!/bin/bash
+declare -A SHED_PKG_LOCAL_OPTIONS=${SHED_PKG_OPTIONS_ASSOC}
 # Patch
 sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in &&
 sed -i -e "/SUBDIRS/s|man[25]||g" man/Makefile &&
 sed -i 's:{(:\\{(:' test/run &&
 # Configure
 ./configure --prefix=/usr \
-            --docdir="$SHED_PKG_DOCS_INSTALL_DIR"
+            --docdir="$SHED_PKG_DOCS_INSTALL_DIR" \
             --disable-static &&
 # Build and Install
 make -j $SHED_NUM_JOBS &&
