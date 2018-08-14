@@ -1,7 +1,7 @@
 NAME=attr
-VERSION=2.4.47
-REVISION=1
-SRC=http://download.savannah.gnu.org/releases/attr/attr-2.4.47.src.tar.gz
-SRCMD5=84f58dec00b60f2dc8fd1c9709291cc7
+VERSION=2.4.48
+REVISION=2
+SRC=http://download.savannah.gnu.org/releases/attr/attr-2.4.48.tar.gz
+SRCMD5=bc1e5cb5c96d99b24886f1f527d3bb3d
 OPTIONS=bootstrap|release (docs)
 DEFAULTS=release docs

@@ -1,16 +1,13 @@
 #!/bin/bash
 declare -A SHED_PKG_LOCAL_OPTIONS=${SHED_PKG_OPTIONS_ASSOC}
-# Patch
-sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in &&
-sed -i -e "/SUBDIRS/s|man[25]||g" man/Makefile &&
-sed -i 's:{(:\\{(:' test/run &&
 # Configure
 ./configure --prefix=/usr \
+            --sysconfdir=/etc \
             --docdir="$SHED_PKG_DOCS_INSTALL_DIR" \
             --disable-static &&
 # Build and Install
 make -j $SHED_NUM_JOBS &&
-make DESTDIR="$SHED_FAKE_ROOT" install install-dev install-lib &&
+make DESTDIR="$SHED_FAKE_ROOT" install &&
 # Rearrange
 chmod -v 755 "${SHED_FAKE_ROOT}/usr/lib/libattr.so" &&
 mkdir -v "${SHED_FAKE_ROOT}/lib" &&
